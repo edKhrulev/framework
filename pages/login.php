@@ -7,18 +7,13 @@
  */
 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/components/Helper.php');
-$db_config = require_once($_SERVER['DOCUMENT_ROOT'] . '/configs/db.php');
-//$link = require_once($_SERVER['DOCUMENT_ROOT'] . '/database/ConnectToDataBaseLogin.php');
+$link = require_once($_SERVER['DOCUMENT_ROOT'] . '/database/ConnectToDataBase.php');
 
 session_start();
 
 if (isset($_SESSION['login'])) {
     Helper::redirect('home');
 }
-
-$link = mysqli_connect($db_config['host'],$db_config['user'],$db_config['password'],$db_config['db_name'])
-
-or die(mysqli_error($link));
 
 $select_db = mysqli_select_db( $link, 'users');
 
