@@ -22,7 +22,7 @@ if (isset($_REQUEST['login']) and isset($_REQUEST['pass'])) {
     $username = $_REQUEST['login'];
     $password = $_REQUEST['pass'];
     $passEncode = md5($password);
-
+var_dump(22);
     $query = "SELECT * FROM users WHERE login = '$username' AND password = '$passEncode'";
 
     $result = mysqli_query($link, $query) or die (mysqli_error($link));
